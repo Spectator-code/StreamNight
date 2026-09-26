@@ -1,0 +1,3 @@
+Primary: #E50914
+Background:#000000
+Text:#FFFFFF

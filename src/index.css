@@ -1,0 +1,316 @@
+:root {
+  --bg-main: #000000;
+  --bg-card: #0a0a0a;
+  --bg-nav: #000000;
+  
+  --accent-cyan: #00f2fe;
+  --accent-primary: #ededed;
+  --accent-primary-hover: #ffffff;
+  
+  --text-main: #ededed;
+  --text-muted: #a1a1aa;
+  
+  --border-color: #27272a;
+  --border-hover: #3f3f46;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 5%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-nav);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.025em;
+}
+
+.nav-logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.hero-badge {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.hero-title span {
+  color: var(--accent-cyan);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Button */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--accent-primary);
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Solid Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: left;
+  transition: border-color 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  border-color: var(--border-hover);
+}
+
+.feature-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.feature-content {
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+}
+
+.feature-desc {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+  padding: 5rem 1.5rem 8rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: -0.03em;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-cyan), rgba(0, 242, 254, 0.05));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 4rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  border: 2px solid var(--border-color);
+  top: 0.25rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-item.completed .timeline-marker {
+  border-color: var(--accent-cyan);
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 15px var(--accent-cyan);
+}
+
+.timeline-item.next .timeline-marker {
+  border-color: var(--accent-cyan);
+  background-color: var(--bg-main);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.timeline-content {
+  background: linear-gradient(145deg, var(--bg-card), #030303);
+  border: 1px solid var(--border-color);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+.timeline-content:hover {
+  transform: translateX(8px);
+  border-color: var(--border-hover);
+}
+
+.timeline-item.completed .timeline-content {
+  border-color: rgba(0, 242, 254, 0.15);
+}
+
+.roadmap-status {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+.completed .roadmap-status {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+}
+
+.next .roadmap-status {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.planned .roadmap-status {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 242, 254, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+}
